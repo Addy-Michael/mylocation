@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import LocationState from "./context/location/LocationState";
+import CategoryState from "./context/category/CategoryState";
 import Nav from "./components/Nav";
 import Management from "./components/Management";
 import AddLocation from "./components/AddLocation";
@@ -12,36 +13,38 @@ import ViewCategories from "./components/view/category/CatViews";
 function App() {
   return (
     <LocationState>
-      <Router>
-        <Fragment>
-          <Nav />
-          <Switch>
-            <Route
-              exact
-              path='/add-location'
-              render={(props) => <AddLocation {...props} />}
-            />
-            <Route
-              exact
-              path='/add-category'
-              render={(props) => <AddCategory {...props} />}
-            />
+      <CategoryState>
+        <Router>
+          <Fragment>
+            <Nav />
+            <Switch>
+              <Route
+                exact
+                path='/add-location'
+                render={(props) => <AddLocation {...props} />}
+              />
+              <Route
+                exact
+                path='/add-category'
+                render={(props) => <AddCategory {...props} />}
+              />
 
-            <Route
-              exact
-              path='/view/location'
-              render={(props) => <ViewLocations {...props} />}
-            />
+              <Route
+                exact
+                path='/view/location'
+                render={(props) => <ViewLocations {...props} />}
+              />
 
-            <Route
-              exact
-              path='/view/category'
-              render={(props) => <ViewCategories {...props} />}
-            />
-          </Switch>
-          <Management />
-        </Fragment>
-      </Router>
+              <Route
+                exact
+                path='/view/category'
+                render={(props) => <ViewCategories {...props} />}
+              />
+            </Switch>
+            <Management />
+          </Fragment>
+        </Router>
+      </CategoryState>
     </LocationState>
   );
 }
