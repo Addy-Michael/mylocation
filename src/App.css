@@ -1,38 +1,210 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  background: #f4f4f4;
+}
+
+.container {
+  max-width: 110rem;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+button {
+  border: none;
+}
+
+.card {
+  background: #fff;
+  /* width: 300px; */
+}
+
+.header {
+  background: crimson;
+  color: #fff;
+}
+
+.header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__content nav {
+  display: flex;
+}
+
+.header__content nav li {
+  list-style: none;
+}
+
+.header__content nav li:not(:last-child),
+.manage button:not(:last-child),
+.coords input,
+.location .add {
+  margin-right: 1rem;
+}
+
+.header__content nav li {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 1rem;
+}
+
+.header__content nav li button,
+.manage button {
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.manage {
+  background: crimson;
+  padding: 1rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.location,
+.category {
+  height: 80vh;
+  background: chartreuse;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* text-align: center; */
 }
 
-.App-link {
-  color: #61dafb;
+.location .form,
+.category .form {
+  display: flex;
+  width: 60%;
+  /* height: 100%; */
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.location .form input,
+.category .form input,
+.coords input,
+.location select {
+  height: 3.5rem;
+  width: 100%;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.location .selectIndex {
+  display: flex;
+  width: 100%;
+}
+
+.location .selectIndex select {
+  width: 80%;
+  margin-right: 1rem;
+}
+
+.location .selectIndex button {
+  width: 50%;
+  margin-right: 0;
+}
+
+.location .add,
+.category .add {
+  height: 3.5rem;
+  padding: 1rem;
+}
+
+.coords {
+  display: flex;
+  width: 100%;
+}
+
+.allLocations {
+  /* text-align: center; */
+  display: grid;
+  align-items: center;
+  /* justify-content: center; */
+  /* justify-items: center; */
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+
+.allLocations .location-details {
+  padding: 1rem;
+}
+
+.allLocations .location-details span {
+  padding: 1rem;
+  display: inline-block;
+  color: #fff;
+}
+
+.allLocations .location-details div:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.allLocations .location-details .locName span {
+  background: chocolate;
+}
+
+.allLocations .location-details .locCat span {
+  background: cornflowerblue;
+}
+
+.allLocations .location-details .loc-lat span {
+  background: cyan;
+}
+
+.allLocations .location-details .loc-lng span {
+  background: darkorange;
+}
+
+.allLocations .location-details .loc-address span {
+  background: orangered;
+}
+
+.catViews {
+  background: #fff;
+  width: 40rem;
+  height: 73vh;
+  margin: 3.5rem auto;
+  text-align: center;
+  overflow: auto;
+}
+
+.catViews div:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.catViews div {
+  border-radius: 5px;
+  padding: 0 0.5rem;
+}
+
+.catViews div p {
+  padding: 1rem;
+}
+
+.catViews div:nth-child(odd) {
+  border: 1px solid crimson;
+}
+
+.catViews div:nth-child(even) {
+  border: 1px solid coral;
 }
