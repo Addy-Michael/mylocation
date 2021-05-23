@@ -99,6 +99,10 @@ button {
   align-items: center;
 }
 
+.category button {
+  margin-right: 1rem;
+}
+
 .location .form input,
 .category .form input,
 .coords input,

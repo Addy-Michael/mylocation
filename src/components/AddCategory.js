@@ -12,6 +12,8 @@ const AddCategory = () => {
       </div>
       <div className='addCat'>
         <button className='add'>Add Location</button>
+        <button className='add edit'>Edit Location</button>
+        <button className='add del'>Delete</button>
       </div>
     </div>
   );

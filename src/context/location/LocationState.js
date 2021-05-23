@@ -5,7 +5,6 @@ import { REMOVE, EDIT, ADD, VIEWS, VIEW, ID } from "../types";
 
 const LocationState = (props) => {
   const initialState = {
-    categories: null,
     locations: null,
     current: null,
     locId: null,

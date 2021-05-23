@@ -11,7 +11,7 @@ export default (state, action) => {
     case VIEWS:
       return {
         ...state,
-        locations: JSON.parse(localStorage.locations),
+        categories: JSON.parse(localStorage.categories),
       };
 
     case VIEW:
@@ -23,10 +23,10 @@ export default (state, action) => {
     case ADD:
     case REMOVE:
     case EDIT:
-      localStorage.setItem("locations", JSON.stringify(action.payload));
+      localStorage.setItem("categories", JSON.stringify(action.payload));
       return {
         ...state,
-        locations: JSON.parse(localStorage.locations),
+        locations: JSON.parse(localStorage.categories),
       };
 
     default:
