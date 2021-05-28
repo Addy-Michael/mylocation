@@ -1,4 +1,4 @@
-import { REMOVE, EDIT, VIEWS, VIEW, ADD, ID } from "../types";
+import { REMOVE, EDIT, VIEWS, VIEW, ADD, ID, CLEAR_CURRENT } from "../types";
 
 export default (state, action) => {
   switch (action.type) {
@@ -27,6 +27,13 @@ export default (state, action) => {
       return {
         ...state,
         locations: JSON.parse(localStorage.locations),
+      };
+
+    case CLEAR_CURRENT:
+      return {
+        ...state,
+        current: [],
+        categories: [],
       };
 
     default:

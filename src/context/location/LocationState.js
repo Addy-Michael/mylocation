@@ -1,12 +1,12 @@
 import React, { useReducer } from "react";
 import LocationContext from "./locationContext";
 import LocationReducer from "./locationReducer";
-import { REMOVE, EDIT, ADD, VIEWS, VIEW, ID } from "../types";
+import { REMOVE, EDIT, ADD, VIEWS, VIEW, ID, CLEAR_CURRENT } from "../types";
 
 const LocationState = (props) => {
   const initialState = {
     locations: null,
-    current: null,
+    current: [],
     locId: [],
   };
 
@@ -44,6 +44,8 @@ const LocationState = (props) => {
     dispatch({ type: EDIT, payload: loc });
   };
 
+  const clearCurr = () => dispatch({ type: CLEAR_CURRENT });
+
   return (
     <LocationContext.Provider
       value={{
@@ -57,6 +59,7 @@ const LocationState = (props) => {
         removeLocation,
         editLocation,
         getId,
+        clearCurr,
       }}
     >
       {props.children}
