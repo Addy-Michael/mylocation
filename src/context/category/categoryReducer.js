@@ -5,7 +5,7 @@ export default (state, action) => {
     case ID:
       return {
         ...state,
-        locId: action.payload,
+        catId: action.payload,
       };
 
     case VIEWS:

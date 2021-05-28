@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import CategoryContext from "../context/category/categoryContext";
 
-const AddCategory = () => {
+const AddCategory = ({ categoryId }) => {
   let categories = [];
 
   const categoryContext = useContext(CategoryContext);
@@ -50,10 +50,12 @@ const AddCategory = () => {
       <div className='form'>
         <div className='selectIndex'>
           <select name='index' onChange={getIndex}>
-            <option value='1'>1</option>
-            <option value='2'>2</option>
-            <option value='3'>3</option>
-            <option value='4'>4</option>
+            {categoryId.length > 0 &&
+              categoryId.map((opt, index) => (
+                <option key={index} value={index}>
+                  {opt}
+                </option>
+              ))}
           </select>
           <button className='add edit' onClick={setCurrent}>
             Select Index

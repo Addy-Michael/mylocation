@@ -1,19 +1,13 @@
 import React, { useState, useContext, useEffect } from "react";
 import LocationContext from "../context/location/locationContext";
+// import CategoryContext from "../context/category/"
 
-const AddLocation = () => {
+const AddLocation = ({ locationId }) => {
   let locations = [];
 
   const locationContext = useContext(LocationContext);
-  const {
-    addLocation,
-    getCurrent,
-    current,
-    editLocation,
-    removeLocation,
-    getId,
-    locId,
-  } = locationContext;
+  const { addLocation, getCurrent, current, editLocation, removeLocation } =
+    locationContext;
 
   const [locInfo, setLocInfo] = useState({
     name: "",
@@ -32,9 +26,7 @@ const AddLocation = () => {
 
     if (localStorage.locations) {
       locations = JSON.parse(localStorage.locations);
-      console.log(localStorage.locations);
     }
-    getId();
   }, [current]);
 
   const { name, lat, lng, address, categories } = locInfo;
@@ -76,17 +68,17 @@ const AddLocation = () => {
 
   const setCurrent = () => getCurrent(Number(index));
 
-  console.log(locId);
-
   return (
     <div className='location'>
       <div className='form'>
         <div className='selectIndex'>
           <select name='index' onChange={getIndex}>
-            <option value='1'>1</option>
-            <option value='2'>2</option>
-            <option value='3'>3</option>
-            <option value='4'>4</option>
+            {locationId.length > 0 &&
+              locationId.map((opt, index) => (
+                <option key={index} value={index}>
+                  {opt}
+                </option>
+              ))}
           </select>
           <button className='add edit' onClick={setCurrent}>
             Select Index

@@ -5,9 +5,9 @@ import { REMOVE, EDIT, ADD, VIEWS, VIEW, ID } from "../types";
 
 const CategoryState = (props) => {
   const initialState = {
-    categories: null,
+    categories: [],
     current: null,
-    locId: null,
+    catId: [],
   };
 
   const [state, dispatch] = useReducer(CategoryReducer, initialState);
@@ -15,7 +15,7 @@ const CategoryState = (props) => {
   const getCategories = () => dispatch({ type: VIEWS });
 
   const getId = () => {
-    let id = JSON.parse(localStorage.locations);
+    let id = JSON.parse(localStorage.categories);
 
     id = id.map((data, index) => index);
 
@@ -49,7 +49,7 @@ const CategoryState = (props) => {
       value={{
         categories: state.categories,
         current: state.current,
-        locId: state.locId,
+        catId: state.catId,
         getCategories,
         getCurrent,
         addCategory,

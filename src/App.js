@@ -5,8 +5,8 @@ import LocationState from "./context/location/LocationState";
 import CategoryState from "./context/category/CategoryState";
 import Nav from "./components/Nav";
 import Management from "./components/Management";
-import AddLocation from "./components/AddLocation";
-import AddCategory from "./components/AddCategory";
+import ManageLocation from "./components/pages/ManageLocation";
+import ManageCategory from "./components/pages/ManageCategory";
 import ViewLocations from "./components/view/location/LocViews";
 import ViewCategories from "./components/view/category/CatViews";
 
@@ -18,23 +18,13 @@ function App() {
           <Fragment>
             <Nav />
             <Switch>
-              <Route
-                exact
-                path='/add-location'
-                render={(props) => <AddLocation {...props} />}
-              />
-              <Route
-                exact
-                path='/add-category'
-                render={(props) => <AddCategory {...props} />}
-              />
-
+              <Route exact path='/add-location' component={ManageLocation} />
+              <Route exact path='/add-category' component={ManageCategory} />
               <Route
                 exact
                 path='/view/location'
                 render={(props) => <ViewLocations {...props} />}
               />
-
               <Route
                 exact
                 path='/view/category'

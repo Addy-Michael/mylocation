@@ -7,7 +7,7 @@ const LocationState = (props) => {
   const initialState = {
     locations: null,
     current: null,
-    locId: null,
+    locId: [],
   };
 
   const [state, dispatch] = useReducer(LocationReducer, initialState);
