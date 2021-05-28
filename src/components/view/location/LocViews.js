@@ -7,11 +7,8 @@ const Views = () => {
   const { getLocations, locations } = locationContext;
 
   useEffect(() => {
-    // console.log(localStorage.locations);
     if (localStorage.locations) getLocations();
   }, []);
-
-  console.log(localStorage.locations);
 
   return (
     <div className='container'>

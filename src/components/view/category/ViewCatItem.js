@@ -1,9 +1,9 @@
 import React from "react";
 
-const ViewCatItem = () => {
+const ViewCatItem = (props) => {
   return (
     <div className='catItem'>
-      <p>Greater Accra</p>
+      <p>{props.category}</p>
     </div>
   );
 };

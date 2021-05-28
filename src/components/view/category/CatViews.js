@@ -1,25 +1,21 @@
-import React from "react";
-import CatItem from "./ViewCatItem";
+import React, { useEffect, useContext } from "react";
+import ViewCatItem from "./ViewCatItem";
+import CategoryContext from "../../../context/category/categoryContext";
 
 const CatViews = () => {
+  const categoryContext = useContext(CategoryContext);
+  const { categories, getCategories } = categoryContext;
+
+  useEffect(() => {
+    if (localStorage.categories) getCategories();
+  }, []);
+
   return (
     <div className='catViews'>
-      <CatItem />
-      <CatItem />
-      <CatItem />
-      <CatItem />
-      <CatItem />
-      <CatItem />
-      <CatItem />
-      <CatItem />
-      <CatItem />
-      <CatItem />
-      <CatItem />
-      <CatItem />
-      <CatItem />
-      <CatItem />
-      <CatItem />
-      <CatItem />
+      {categories !== null &&
+        categories.map((category, index) => (
+          <ViewCatItem key={index} category={category} />
+        ))}
     </div>
   );
 };
