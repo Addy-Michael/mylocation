@@ -22,7 +22,7 @@ function App() {
               <Route exact path='/add-category' component={ManageCategory} />
               <Route
                 exact
-                path='/view/location'
+                path='/'
                 render={(props) => <ViewLocations {...props} />}
               />
               <Route

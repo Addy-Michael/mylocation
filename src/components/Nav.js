@@ -8,7 +8,7 @@ const Nav = () => {
   };
 
   const viewLocations = () => {
-    history.push("/view/location");
+    history.push("/");
   };
 
   return (
